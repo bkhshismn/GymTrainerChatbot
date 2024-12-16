@@ -1,0 +1,15 @@
+﻿@model GymTrainerChatbot.Domain.Entities.Question
+
+@{
+    ViewData["Title"] = "Delete Question";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>Are you sure you want to delete the question <strong>@Model.Title</strong>?</p>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+</form>

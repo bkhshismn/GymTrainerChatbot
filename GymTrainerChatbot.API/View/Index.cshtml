@@ -1,0 +1,33 @@
+﻿@model IEnumerable<GymTrainerChatbot.Domain.Entities.Question>
+
+@{
+    ViewData["Title"] = "Questions";
+}
+
+<div class="container">
+    <h2>Questions</h2>
+    <a href="@Url.Action("Create")" class="btn btn-primary mb-3">Add New Question</a>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var question in Model)
+            {
+                <tr>
+                    <td>@question.Title</td>
+                    <td>@question.Content</td>
+                    <td>
+                        <a href="@Url.Action("Edit", new { id = question.Id })" class="btn btn-warning">Edit</a>
+                        <a href="@Url.Action("Delete", new { id = question.Id })" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

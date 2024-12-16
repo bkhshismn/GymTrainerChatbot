@@ -1,0 +1,23 @@
+﻿@model GymTrainerChatbot.Domain.Entities.Question
+
+@{
+    ViewData["Title"] = "Edit Question";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label for="Title">Title</label>
+        <input type="text" class="form-control" asp-for="Title" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Content">Content</label>
+        <textarea class="form-control" asp-for="Content" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Update</button>
+</form>

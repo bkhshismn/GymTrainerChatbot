@@ -1,0 +1,6 @@
+@GymTrainerChatbot.API_HostAddress = http://localhost:5010
+
+GET {{GymTrainerChatbot.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
